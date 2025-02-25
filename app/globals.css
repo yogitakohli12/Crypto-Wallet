@@ -16,6 +16,114 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background-color: black;
+  background:conic-gradient(red 10%,blue 30%,pink 40%,green 30%,red 30%,rgb(76, 76, 65) 100%);
   font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+  width: "100%";
+   padding: "20px";
+   margin-top: "20px" ;
+   background-color: black;
+}
+.walletbtn {
+  padding: 10px;
+  width: 50%;
+  justify-self: center;
+  font-size: 16px;
+  border: 1px solid pink;
+  color: pink;
+  margin: 20px 0px;
+  border-radius: 10px;
+  position:relative;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.walletbtn::after,.walletbtn::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  /* padding: 30px; */
+  background: conic-gradient( from var(--angle), transparent 80%,blue);
+  translate: -50% -50%;
+animation: 4s spin linear infinite;
+}
+.walletbtn::before{
+  filter: blur(2rem);
+  opacity: 0.5;
+
+}
+@keyframes spin {
+  from{
+    --angle:0deg;
+  }
+  to{
+    --angle:360deg;
+  }
+}
+
+
+.walletbtn:active{
+  background-color: black;
+  color: white;
+}
+.table{
+  width: "100%";
+   border-collapse: "collapse";
+    margin-top: "10px";
+}
+.tabledata{
+  border: 1px solid white;
+   padding: 5px 10px;
+   
+}
+
+.cryptocontainer{
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+gap: 20px;
+width: 100%;
+
+}
+.inputfield{
+  width: 55%;
+  background-color: transparent;
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  border: 2px solid white;
+  padding: 5px;
+  margin-top: 2%;
+}
+.tablecontainer{
+  display: flex;
+  gap: 5%;
+}
+h1{
+  color: red;
+}
+.tablecontainer h3{
+  color: green;
+}
+.th{
+  color: black;
+  padding: 8px;
+  background-color: rgb(234, 200, 12);
+  border-right: 2px solid black;
+}
+.sendingcontainer{
+  display: flex;
+  gap: 20px;
+  /* margin-bottom: 20px; */
 }
